@@ -6,7 +6,7 @@
       Steven Davis:  
       
 # WikiRacer:
- ## Wikiracer is a game in which people race from one wikipedia page to another by only clicking links
+ Wikiracer is a game in which people race from one wikipedia page to another by only clicking links
   
  * We plan to add to this by making a portal to actually time the races:
       * Add multiplayer
