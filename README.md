@@ -3,7 +3,7 @@
 # Names: Email
       George Albrecht: galbrech@purdue.edu
       Nicholas Schneider: schnei54@purdue.edu
-      Steven Davis:  
+      Steven Davis: davis650@purdue.edu
       
 # WikiRacer:
  Wikiracer is a game in which people race from one wikipedia page to another by only clicking links
