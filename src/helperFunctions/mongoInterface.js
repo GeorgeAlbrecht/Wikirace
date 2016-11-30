@@ -1,4 +1,5 @@
 var mongo = require('mongodb');
+var path = require("path");
 
 var Server = mongo.Server,
     Db = mongo.Db,
@@ -36,3 +37,4 @@ exports.findById = function(req, res) {
 exports.findByIdName = function(req, res) {
     res.send({id: req.params.id, name: req.params.name, description: "description"});
 };
+
