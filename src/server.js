@@ -1,7 +1,10 @@
-var http = require('http');
+var express = require('express');
+var mongoInterface = require('./helperFunctions/mongoInterface');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(3000, '127.0.0.1');
-console.log('Server running at http://127.0.0.1:3000/');
+var app = express();
+
+app.get('/players', mongoInterface.findAll);
+app.get('/players/:id', mongoInterface.findById);
+
+app.listen(3000);
+console.log('Listening on port 3000...');
