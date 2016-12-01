@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<header>
+<link rel="stylesheet" href="wikiracestyle.css">
+</header>
+
+<body>
+<script language="javascript">
+function() submitForms{
+	document.getElementById("_start").submit();
+	document.getElementById("_dest").submit();
+}
+</script>
+
+<h2>Select your Start wiki page.</h2>
+<form class="form" action="" id="_start">
+	<input type="radio" name="start" value="banana">Banana<br>
+	<input type="radio" name="start" value="russia">Russia<br>
+	<input type="radio" name="start" value="halloween">Halloween<br>
+	<input type="radio" name="start" value="gandi">Mahatma Gandhi<br>
+</form>
+<h2>Select your Destination wiki page.</h2>
+<form class="form" action="" id="_dest">
+	<input type="radio" name="dest" value="protein">Protein<br>
+	<input type="radio" name="dest" value="djibouti">Djibouti<br>
+	<input type="radio" name="dest" value="bahamas">The Bahamas<br>
+	<input type="radio" name="dest" value="bush">George W. Bush<br>
+</form><br><br>
+<input type="button" class="button" value="Submit" onclick="submitForms()"/>
+
+</body>
+
+<div class="footer">
+	<p>
+	Creators: Nick Schneider, Steven Davis, George Albrecht
+	</p>
+</div>
