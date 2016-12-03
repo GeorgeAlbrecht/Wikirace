@@ -1,19 +1,21 @@
 body {
-	background-color: LightCyan;
+	background-color: lightcyan;
+    font-family: Verdana;
+    font-size: large;
 }
 
 h1 {
-	font-family: verdana;
+	font-family: Verdana;
 	font-size: 200%;
 }
 
 h2 {
-	font-family: verdana;
+	font-family: Verdana;
 	font-size: 150%;
 }
 
 h3 {
-	font-family: verdana;
+	font-family: Verdana;
 	font-size: 125%;
 }
 
@@ -21,7 +23,7 @@ h3 {
 	background-color: navy;
 	color: white;
 	font-size: 16px;
-	font-family: verdana;
+	font-family: Verdana;
 	border: none;
 	padding: 15px 20px;
 }
@@ -32,9 +34,10 @@ h3 {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #efefef;
+  background-color: lightgrey;
   text-align: left;
   font-size: 95%;
+  font-family: Verdana;
 }
 
 .form {
