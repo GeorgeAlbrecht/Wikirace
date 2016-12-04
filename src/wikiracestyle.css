@@ -19,6 +19,11 @@ h3 {
 	font-size: 125%;
 }
 
+p {
+	font-family: Verdana;
+	font-size: 115%;
+}
+
 .button {
 	background-color: navy;
 	color: white;
@@ -42,5 +47,4 @@ h3 {
 
 .form {
 	font-family: verdana;
-	font-size: 150%;
 }

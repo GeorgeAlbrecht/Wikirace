@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <body>
-
-<h2>Select your Start wiki page.</h2>
 <form class="form" method="post" action="/race" id="_start">
+	<p class="h2"><b>Select your Starting wiki page.</b></p>
 	<input type="radio" name="start" value="banana" checked>Banana<br>
 	<input type="radio" name="start" value="russia">Russia<br>
 	<input type="radio" name="start" value="halloween">Halloween<br>
@@ -12,6 +11,7 @@
 	<input type="radio" name="dest" value="protein">Protein<br>
 	<input type="radio" name="dest" value="bahamas">The Bahamas<br>
 	<input type="radio" name="dest" value="bush">George W. Bush<br><br>
+	<input type="hidden" name="_game_mode" value="{{_mode}}"/>
 	<input type="submit" class="button" value="Submit"/>
 </form>
 </body>
