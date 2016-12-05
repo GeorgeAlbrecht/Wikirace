@@ -1,8 +1,62 @@
 <!DOCTYPE html>
 <body>
     <p>Clicks: <a id="count">0</a></p>
+    <div id="currentWiki" src="{{_start}}" onload="addElement()" onclick="addElement()"> </div>
     <script type="text/javascript">
+
+        console.log("Hello");
+            
         var clicks = -1;
+
+        var next = require('../nextPage.js');
+
+        function isolateText(file) {
+
+            console.log(file);
+
+            next.page(file);
+
+            console.log("Isolate" + file);
+
+            var doc = document.createElement('currentWiki');
+
+            doc.href = 'WikiRace.mybluemix.net/' + file;
+            doc.target = '_blank';
+            doc.download = 'webData.html';
+            doc.click();
+
+            var div = doc.getElementById('firstHeading');
+            var child = document.getElementById('bodyContent');
+            return div.removeChild(child);
+
+        }
+
+        function addElement(file) {
+
+            if (clicks === -1) {
+                file = document.getElementById('currentWiki').attributes.getNamedItem('src');
+            } else {
+
+                var child = document.getElementById("currentWiki").appendChild(newElement);
+                document.removeChild(child);
+            }
+
+            clicks += 1;
+
+            console.log("addElement" + file);
+
+            //remove old element
+            var newElement = isolateText(file);
+
+            
+            document.getElementById("parent").appendChild(newElement);
+            //document.getElementById("content").innerHTML = '<object type="type/html" data="home.html" ></object>';
+
+        }
+
+
+
+        
         /*function incrCount(_count)
         {
             return ++_count;
@@ -19,5 +73,7 @@
     <p>Mode = {{_mode}}</p>
     <p>Start = {{_start}}</p>
     <p>Destination = {{_dest}}</p>-->
-    <embed id="theiframe" src="{{_start}}" style="width: 100%; height: 775px;" onload="iframeclick()"></embed>
+    <!--embed id="theiframe" src="{{_start}}" style="width: 100%; height: 775px;" onload="iframeclick()"></e<!--embed id="theiframe" src="{{_start}}" style="width: 100%; height: 775px;" onload="iframeclick()"></embed>-->
+
+
 </body>
