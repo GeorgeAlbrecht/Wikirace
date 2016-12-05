@@ -1,6 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
+var Client = require('node-rest-client').Client;
+var https = require('https');
+var fetch = require('node-fetch');
+var fs = require('fs');
+
+var client = new Client();
 
 var app = express();
 
@@ -47,14 +53,11 @@ app.post("/game", (req,res) => {
 	signingUp = 0;
 	_username = req.body.username;
 	_password = req.body.password;
-	//checking the database for username and password combo
-	// if successful, return index
-	// if failed, return error page with button back to login
 	if (_username === '' || _password === '') {
 		res.render('error');
 	}
 	else {
-		res.render('index');
+		res.render('login');
 	}
 });
 
@@ -77,6 +80,10 @@ app.post("/signed-up", (req,res) => {
 		res.render('error');
 	}
 	else {
+		client.get("https://wikirace.mybluemix.net/insertintoMongoDB/"+_username+"/"+_password, function(data, response){
+			console.log(data);
+			console.log(response);		
+	    });
 		res.render('login');
 	}
 });
