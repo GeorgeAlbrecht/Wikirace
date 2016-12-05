@@ -29,13 +29,25 @@ app.get("/", (req, res) => {
 	res.render('login');
 })
 
+app.post("/error", (req,res) => {
+	res.render('login');
+});
+
+
 app.post("/game", (req,res) => {
 	console.log("in game POST call");
 	console.log(req.body);
+	_username = req.body.username;
+	_password = req.body.password;
 	//checking the database for username and password combo
 	// if successful, return index
 	// if failed, return error page with button back to login
-	res.render('index');
+	if (_username === '' || _password === '') {
+		res.render('error');
+	}
+	else {
+		res.render('index');
+	}
 });
 
 app.post("/sign-up", (req,res) => {
