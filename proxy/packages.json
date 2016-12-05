@@ -1,0 +1,9 @@
+{
+  "name": "Wikirace",
+  "description": "A basic website that will allow the users to race each other",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+
+  }
+}
