@@ -73,11 +73,24 @@ app.post("/start-dest", (req, res) => {
 app.post("/race", (req, res) => {
 	console.log("in race POST call");
 	console.log(req.body);
-	res.render('race', {
-		_mode: req.body._game_mode,
-		_start: req.body.start,
-		_dest: req.body.dest
+	_mode = req.body._game_mode,
+	_start = req.body.start,
+	_dest = req.body.dest
+	if (_mode === 'Timed') {
+		res.render('timed', {
+		_mode,
+		_start,
+		_dest
 	});
+	}
+	else if (_mode === 'Clicks') {
+		res.render('clicks', {
+		_mode,
+		_start,
+		_dest
+	});
+	}
+	
 });
 
 app.get("/wiki/:name", (req, res) => {

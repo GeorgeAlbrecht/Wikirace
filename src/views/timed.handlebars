@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<body>
+    <label class="h2" id="minutes">00</label>:<label id="seconds">00</label>
+    <script type="text/javascript">
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    </script>
+    <hr/>
+    <!--<p>Data needed for logic of race page:</p>
+    <p>Mode = {{_mode}}</p>
+    <p>Start = {{_start}}</p>-->
+    <p>Destination = {{_dest}}</p>
+    <embed src = {{_start}} width="100%" height="725"></embed>
+</body>
