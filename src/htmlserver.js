@@ -4,6 +4,8 @@ var exphbs = require('express-handlebars');
 
 var app = express();
 
+var signingUp = 0;
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -29,14 +31,20 @@ app.get("/", (req, res) => {
 	res.render('login');
 })
 
-app.post("/error", (req,res) => {
-	res.render('login');
+app.post("/login", (req,res) => {
+	if (signingUp) {
+		res.render('sign_up');
+	}
+	else {
+		res.render('login');
+	}
 });
 
 
 app.post("/game", (req,res) => {
 	console.log("in game POST call");
 	console.log(req.body);
+	signingUp = 0;
 	_username = req.body.username;
 	_password = req.body.password;
 	//checking the database for username and password combo
@@ -59,7 +67,18 @@ app.post("/sign-up", (req,res) => {
 app.post("/signed-up", (req,res) => {
 	console.log("in signed-up post call");
 	console.log(req.body);
-	res.render('login');
+	signingUp = 1;
+	_username = req.body.s_username;
+	_password = req.body.s_password;
+	//checking the database for username and password combo
+	// if successful, return index
+	// if failed, return error page with button back to login
+	if (_username === '' || _password === '') {
+		res.render('error');
+	}
+	else {
+		res.render('login');
+	}
 });
 
 app.post("/new-game", (req, res) => {
