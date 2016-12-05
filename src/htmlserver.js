@@ -57,7 +57,7 @@ app.post("/game", (req,res) => {
 		res.render('error');
 	}
 	else {
-		res.render('login');
+		res.render('index');
 	}
 });
 
